@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bootstrap-argocd
+  namespace: istio-system
+spec:
+  gateways:
+    - istio-system/gateway
+  hosts:
+    - "argocd.company-test.com"
+  http:
+    - route:
+        - destination:
+            host: argocd-server.bootstrap-argocd.svc.cluster.local
+            port:
+              number: 80

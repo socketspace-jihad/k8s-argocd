@@ -1,0 +1,1 @@
+kubectl apply -n argo-rollout -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
